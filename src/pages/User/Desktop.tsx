@@ -215,7 +215,7 @@ const Desktop: FC<DesktopProps> = ({
         </Typography>
 
         <Typography variant="body1" fontSize={18} fontWeight="bold" mt={2}>
-          Share this job:
+          Share this profile:
         </Typography>
 
         <Box display="flex">
@@ -290,8 +290,7 @@ const Desktop: FC<DesktopProps> = ({
           color={theme.palette.grey[500]}
           mt={2}
         >
-          Download our app today to get started. Now completely free, no hidden
-          costs.
+         Browse for free and connect with families and nannies across the UAE. Start with a free trial—no commitment needed.
         </Typography>
 
         <Box display="flex" mt={2}>

@@ -1,11 +1,11 @@
 import { colors } from "@mui/material";
 
 export const theme = {
-  primary: "#FCFDFF",
+  primary: "#8B7BDA",
   secondary: "#FBFBFC",
   territory: "#FEF5F8",
-  main: "#FF8570",
-  orange: "#F87997",
+  main: "#8B7BDA",
+  orange: "#8B7BDA",
   pink: "#EEB0D3",
   light_blue: "#E7F0FA",
   blue: "#A89CE3",

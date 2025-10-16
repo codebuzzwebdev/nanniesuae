@@ -103,8 +103,7 @@ const Banner: FC = () => {
                 fontSize={20}
                 color={theme.palette.grey[600]}
               >
-                Download our app today to get started. Now completely free, no
-                hidden costs.
+               Browse for free and connect with families and nannies across the UAE. Start with a free trial—no commitment needed.
               </Typography>
             </Box>
             <Box
@@ -139,8 +138,7 @@ const Banner: FC = () => {
                 fontSize={20}
                 color={theme.palette.grey[600]}
               >
-                Download our app today to get started. Now completely free, no
-                hidden costs.
+               Browse for free and connect with families and nannies across the UAE. Start with a free trial—no commitment needed.
               </Typography>
             </Box>
 

@@ -14,7 +14,7 @@ const Header: FC = () => {
   const theme = useTheme();
 
   const handleDownload = () => {
-    window.location.href = `${VITE_WP_URL}/download`;
+    window.location.href = `${VITE_WP_URL}/appdownload.html`;
   };
 
   return (

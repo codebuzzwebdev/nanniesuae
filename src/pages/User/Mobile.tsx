@@ -196,7 +196,7 @@ const Mobile: FC<MobileProps> = ({
           </Typography>
 
           <Typography variant="body1" fontSize={18} fontWeight="bold" mt={2}>
-            Share this job:
+            Share this profile:
           </Typography>
 
           <Box display="flex">
@@ -303,8 +303,7 @@ const Mobile: FC<MobileProps> = ({
           mt={2}
           textAlign="center"
         >
-          Download our app today to get started. Now completely free, no hidden
-          costs.
+         Browse for free and connect with families and nannies across the UAE. Start with a free trial—no commitment needed.
         </Typography>
 
         <Box

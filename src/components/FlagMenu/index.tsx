@@ -14,11 +14,14 @@ import Icon from "@components/Icon";
 
 import UAESVG from "@assets/uae.svg";
 import SASVG from "@assets/sa.svg";
+import BHSVG from "@assets/bahrain.svg";
+
+const VITE_WP_URL = import.meta.env.VITE_WP_URL;
 
 const FlagMenu: React.FC = () => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef<HTMLButtonElement>(null);
+  const anchorRef = React.useRef<HTMLDivElement>(null);
 
   const handleToggle = (isOpen: boolean) => {
     setOpen(isOpen);
@@ -35,48 +38,57 @@ const FlagMenu: React.FC = () => {
     setOpen(false);
   };
 
+  const handleRedirect = (country: string) => {
+    setOpen(false);
+    switch (country) {
+      case "uae":
+        window.location.href = `${VITE_WP_URL}/`;
+        break;
+      case "sa":
+        window.location.href = `${VITE_WP_URL}/saudi-arabia`;
+        break;
+      case "bahrain":
+        window.location.href = `${VITE_WP_URL}/bahrain`;
+        break;
+      default:
+        break;
+    }
+  };
+
   function handleListKeyDown(event: React.KeyboardEvent) {
-    if (event.key === "Tab") {
-      event.preventDefault();
-      handleClose(event);
-    } else if (event.key === "Escape") {
+    if (event.key === "Tab" || event.key === "Escape") {
       handleClose(event);
     }
   }
-
-  React.useEffect(() => {
-    if (!open) {
-      anchorRef.current?.focus();
-    }
-  }, [open]);
 
   return (
     <Box
       px={{ xs: 1, sm: 1, md: 1, lg: 1, xl: "15px" }}
       onMouseLeave={() => handleToggle(false)}
     >
+      {/* Trigger Button */}
       <Box
         ref={anchorRef}
-        id="composition-button"
-        aria-controls={open ? "composition-button" : undefined}
+        id="flag-menu-button"
+        aria-controls={open ? "flag-menu-list" : undefined}
         aria-expanded={open ? "true" : undefined}
         aria-haspopup="true"
         onMouseEnter={() => handleToggle(true)}
         onMouseLeave={handleClose}
-        color={theme.palette.common.black}
         display="flex"
         alignItems="center"
         sx={{
           cursor: "pointer",
           fontSize: 16,
           textTransform: "none",
+          color: theme.palette.common.black,
           "&:hover": {
             color: theme.palette.primary.main,
           },
         }}
       >
         <Box display="flex" alignItems="center" px={1}>
-          <img src={UAESVG} alt="Flag" width={36} height={24} />
+          <img src={UAESVG} alt="UAE" width={36} height={24} />
           <Typography variant="body1" color="#161D2D" fontSize={16} ml={1}>
             UAE
           </Typography>
@@ -85,6 +97,8 @@ const FlagMenu: React.FC = () => {
           </Box>
         </Box>
       </Box>
+
+      {/* Dropdown Menu */}
       <Popper
         open={open}
         anchorEl={anchorRef.current}
@@ -95,6 +109,7 @@ const FlagMenu: React.FC = () => {
         sx={{
           width: 250,
           pt: 2,
+          zIndex: 9999,
         }}
       >
         {({ TransitionProps, placement }) => (
@@ -107,54 +122,59 @@ const FlagMenu: React.FC = () => {
           >
             <Paper
               sx={{
-                "&.MuiPaper-root": {
-                  borderRadius: 0,
-                  boxShadow:
-                    "rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;",
-                  background: theme.palette.common.white,
-                },
+                borderRadius: 0,
+                boxShadow:
+                  "rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px",
+                background: theme.palette.common.white,
               }}
             >
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
                   autoFocusItem={false}
-                  id="composition-button"
-                  aria-labelledby="composition-button"
+                  id="flag-menu-list"
+                  aria-labelledby="flag-menu-button"
                   onKeyDown={handleListKeyDown}
-                  sx={{
-                    "&.MuiList-root": {
-                      background: theme.palette.common.white,
-                      py: 2,
-                    },
-                  }}
                   onMouseEnter={() => handleToggle(true)}
                   onMouseLeave={() => handleToggle(true)}
+                  sx={{
+                    py: 2,
+                    background: theme.palette.common.white,
+                  }}
                 >
+                  {/* Saudi Arabia */}
                   <MenuItem
-                    onClick={handleClose}
+                    onClick={() => handleRedirect("sa")}
                     sx={{
                       py: 1,
-                      cursor: "pointer",
-                      background: theme.palette.common.white,
                       "&:hover": {
-                        background: theme.palette.common.white,
                         color: theme.palette.primary.main,
-                      },
-                      "&.Mui-selected": {
                         background: theme.palette.common.white,
-                        color: theme.palette.common.white,
                       },
                     }}
                   >
-                    <Box display="flex" alignItems="center" px={1}>
-                      <img src={SASVG} alt="Flag" width={36} height={24} />
-                      <Typography
-                        variant="body1"
-                        color="#161D2D"
-                        fontSize={16}
-                        ml={1}
-                      >
+                    <Box display="flex" alignItems="center">
+                      <img src={SASVG} alt="Saudi Arabia" width={36} height={24} />
+                      <Typography variant="body1" fontSize={16} ml={1}>
                         SA
+                      </Typography>
+                    </Box>
+                  </MenuItem>
+
+                  {/* Bahrain */}
+                  <MenuItem
+                    onClick={() => handleRedirect("bahrain")}
+                    sx={{
+                      py: 1,
+                      "&:hover": {
+                        color: theme.palette.primary.main,
+                        background: theme.palette.common.white,
+                      },
+                    }}
+                  >
+                    <Box display="flex" alignItems="center">
+                      <img src={BHSVG} alt="Bahrain" width={36} height={24} />
+                      <Typography variant="body1" fontSize={16} ml={1}>
+                        Bahrain
                       </Typography>
                     </Box>
                   </MenuItem>

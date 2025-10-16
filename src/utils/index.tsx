@@ -630,99 +630,49 @@ export const headerItems: HeaderType[] = [
   },
   {
     id: 2,
-    title: "About Us",
+    title: "For Families",
     items: [
-      {
-        id: 1,
-        title: "About Yaya",
-        url: "/about-us",
-      },
-      {
-        id: 2,
-        title: "How it Works",
-        url: "/how-it-works",
-      },
-      {
-        id: 3,
-        title: "Features",
-        url: "/features",
-      },
-      {
-        id: 4,
-        title: "Pricing",
-        url: "/pricing",
-      },
+      { id: 1, title: "CareFinder™", url: "/carefinder" },
+      { id: 2, title: "Explore Nanny Profiles", url: "/nannies-in-uae/" },
+      { id: 3, title: "How it Works", url: "/how-it-works" },
+      { id: 4, title: "Features", url: "/features" },
+      { id: 5, title: "Pricing & Plan", url: "/pricing" },
+      { id: 6, title: "Explore Family Care", url: "/familycare" },
+      { id: 7, title: "Get a Visa", url: "/visa" },
     ],
   },
   {
     id: 3,
-    title: "Services",
+    title: "For Nannies",
     items: [
-      {
-        id: 5,
-        title: "Find a Nanny",
-        url: "/nannies-in-uae",
-      },
-      {
-        id: 13,
-        title: "Find a Job",
-        url: "/find-a-job",
-      },
-      {
-        id: 14,
-        title: "Get a Visa",
-        url: "/visa",
-      },
+      { id: 8, title: "Find a Job", url: "/find-a-job" },
+      { id: 9, title: "Yaya Academy", url: "/yaya-academy" },
     ],
   },
   {
     id: 4,
     title: "Resources",
     items: [
-      {
-        id: 6,
-        title: "Care Guide",
-        url: "/careguide",
-      },
-      {
-        id: 7,
-        title: "Tutorials",
-        url: "/find-a-job/#Tutorial",
-      },
-      {
-        id: 8,
-        title: "Terms & Conditions",
-        url: "/terms-and-conditions",
-      },
-      {
-        id: 9,
-        title: "Privacy Policy",
-        url: "/privacy-policy",
-      },
+      { id: 11, title: "Care Guide", url: "/care-guide" },
+      { id: 10, title: "About Us", url: "/about-us" },
+      { id: 12, title: "Partnerships", url: "/partnerships/" },
+      { id: 12, title: "Careers at Yaya", url: "/careers" },
+      { id: 13, title: "Terms & Conditions", url: "/terms-and-conditions" },
+      { id: 14, title: "Privacy Policy", url: "/privacy-policy" },
     ],
   },
   {
     id: 5,
     title: "Support",
     items: [
-      {
-        id: 10,
-        title: "Contact Us",
-        url: "/contact-us",
-      },
-      {
-        id: 11,
-        title: "Whatsapp Us",
-        url: "https://api.whatsapp.com/send/?phone=971568578544&text=Hi+Yaya+Team&type=phone_number&app_absent=0",
-      },
-      {
-        id: 12,
-        title: "FAQs",
-        url: "/How-it-Works/#faq",
-      },
+      { id: 15, title: "Email Us", url: "/contact-us" },
+      { id: 16, title: "WhatsApp Us", url: "https://api.whatsapp.com/send/?phone=971568578544&text=Hi+Yaya+Team&type=phone_number&app_absent=0" },
+      { id: 17, title: "FAQs", url: "/how-it-works#faq" },
     ],
   },
 ];
+
+
 
 export interface FooterItem {
   id: number;
@@ -739,95 +689,35 @@ export interface FooterType {
 export const footerItems: FooterType[] = [
   {
     id: 1,
-    title: "About Us",
+    title: "For Families",
     items: [
-      {
-        id: 1,
-        title: "About Yaya",
-        url: "/about-us",
-      },
-      {
-        id: 2,
-        title: "How it Works",
-        url: "/how-it-works",
-      },
-      {
-        id: 3,
-        title: "Features",
-        url: "/features",
-      },
-      {
-        id: 4,
-        title: "Pricing",
-        url: "/pricing",
-      },
+      { id: 1, title: "CareFinderᵀᴹ", url: "/carefinder" },
+      { id: 2, title: "Explore Profiles", url: "/nannies-in-uae/" },
+      { id: 3, title: "How it Works", url: "/how-it-works" },
+      { id: 4, title: "Features", url: "/features" },
+      { id: 5, title: "Pricing", url: "/pricing" },
+      { id: 6, title: "Explore Family Care", url: "/familycare/" },
+      { id: 7, title: "Get a Visa", url: "/get-a-visa" },
     ],
   },
   {
     id: 2,
-    title: "Services",
+    title: "For Nannies",
     items: [
-      {
-        id: 5,
-        title: "Find Nannies",
-        url: "/nannies-in-uae",
-      },
-      {
-        id: 6,
-        title: "Find Jobs",
-        url: "/find-a-job",
-      },
-      {
-        id: 19,
-        title: "Get a Visa",
-        url: "/visa",
-      },
-      {
-        id: 7,
-        title: "Filipino Nannies",
-        url: "?nationality=62",
-      },
-      {
-        id: 8,
-        title: "Ugandan Nannies",
-        url: "?nationality=185",
-      },
-      {
-        id: 9,
-        title: "Live Out Nannies",
-        url: "?jobType=4",
-      },
-      {
-        id: 10,
-        title: "Maids in Dubai",
-        url: "?city=2339",
-      },
+      { id: 8, title: "Find a Job", url: "/familycare" },
+      { id: 9, title: "Yaya Academy", url: "/yaya-academy" },
     ],
   },
   {
     id: 3,
     title: "Resources",
     items: [
-      {
-        id: 11,
-        title: "Care Guide",
-        url: "/careguide",
-      },
-      {
-        id: 12,
-        title: "Tutorials",
-        url: "/find-a-job/#Tutorial",
-      },
-      {
-        id: 13,
-        title: "Terms & Conditions",
-        url: "/terms-and-conditions",
-      },
-      {
-        id: 14,
-        title: "Privacy Policy",
-        url: "/privacy-policy",
-      },
+      { id: 11, title: "Care Guide", url: "/care-guide" },
+      { id: 10, title: "About Us", url: "/about-us" },
+      { id: 11, title: "Partnerships", url: "/partnerships" },
+      { id: 12, title: "Career at Yaya", url: "/careers" },
+      { id: 13, title: "Terms & Conditions", url: "/terms-and-conditions" },
+      { id: 14, title: "Privacy Policy", url: "/privacy-policy" },
     ],
   },
   {

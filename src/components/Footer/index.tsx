@@ -6,7 +6,7 @@ import Icon from "@components/Icon";
 import Logo from "@components/Logo";
 import GooglePNG from "@assets/google.svg";
 import ApplePNG from "@assets/apple.svg";
-import UAESVG from "@assets/uae.svg";
+import BHSVG from "@assets/bahrain.svg";
 
 import { footerItems } from "@utils";
 
@@ -30,23 +30,23 @@ const Footer: FC = () => {
   };
 
   const handleApple = () => {
-    window.open(VITE_APP_STORE_URL);
+    window.open(VITE_APP_STORE_URL, "_blank", "noopener,noreferrer");
   };
 
   const handleGoogle = () => {
-    window.open(VITE_PLAY_STORE_URL);
+    window.open(VITE_PLAY_STORE_URL, "_blank", "noopener,noreferrer");
   };
 
   const handleFacebook = () => {
-    window.open(VITE_FACEBOOK_URL);
+    window.open(VITE_FACEBOOK_URL, "_blank", "noopener,noreferrer");
   };
 
   const handleInstagram = () => {
-    window.open(VITE_INSTAGRAM_URL);
+    window.open(VITE_INSTAGRAM_URL, "_blank", "noopener,noreferrer");
   };
 
   const handleYoutube = () => {
-    window.open(VITE_YOUTUBE_URL);
+    window.open(VITE_YOUTUBE_URL, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -64,15 +64,9 @@ const Footer: FC = () => {
             color={theme.palette.grey[500]}
             fontSize={14}
             mt={2}
-            maxWidth="85%"
+            sx={{ maxWidth: { xs: "100%", lg: "85%" } }}
           >
-            Yaya Middle East is the region’s first childcare mobile app,
-            revolutionizing the way you find nannies and maids in the UAE. We’re
-            committed to streamlining your search, eliminating agency fees, and
-            providing a clear, direct, and transparent link to the largest
-            database of qualified nannies and maids in the UAE. Discover the
-            ideal nanny for your family in Dubai and Abu Dhabi with Yaya—the
-            comprehensive 360 childcare app.
+            Yaya Middle East is the UAE’s all-in-one family app, connecting you with trusted nannies, maids, tutors, newborn care specialists, and more. Whether you need childcare, educational support, or family services like swim coaches, music teachers, or event planners, Yaya has it all. Our platform simplifies finding care by eliminating agency fees and providing direct access to the largest network of qualified caregivers and professionals in Dubai, Abu Dhabi, and across the UAE. No matter what your family needs, Yaya is here to help — finding care, made easy.
           </Typography>
 
           <Box mt={2} ml={-1}>
@@ -87,10 +81,25 @@ const Footer: FC = () => {
             </IconButton>
           </Box>
 
-          <Box display="flex" alignItems="center" mt={2}>
-            <img src={UAESVG} alt="Flag" width={36} height={24} />
+          {/* Bahrain Flag Selector */}
+          <Box
+            display="flex"
+            alignItems="center"
+            mt={4}
+            sx={{
+              cursor: "pointer",
+              "&:hover": {
+                color: theme.palette.primary.main,
+              },
+            }}
+            onClick={() => (window.location.href = `${VITE_WP_URL}/bahrain`)}
+          >
+            <Typography variant="body1" fontSize={16} mr={1}>
+              Switch to
+            </Typography>
+            <img src={BHSVG} alt="Bahrain Flag" width={36} height={24} />
             <Typography variant="body1" fontSize={16} ml={1}>
-              UAE
+              Bahrain
             </Typography>
           </Box>
         </Grid>
@@ -129,6 +138,7 @@ const Footer: FC = () => {
                           height={50}
                           className="store-images"
                           onClick={handleApple}
+                          style={{ cursor: "pointer" }}
                         />
                       </Box>
                     );
@@ -142,6 +152,7 @@ const Footer: FC = () => {
                           height={50}
                           className="store-images"
                           onClick={handleGoogle}
+                          style={{ cursor: "pointer" }}
                         />
                       </Box>
                     );
@@ -171,6 +182,7 @@ const Footer: FC = () => {
           </Grid>
         </Grid>
       </Grid>
+
       <Typography
         variant="body1"
         color={theme.palette.grey[500]}
@@ -180,7 +192,7 @@ const Footer: FC = () => {
           px: "8px",
         }}
       >
-        © Copyright 2024 Yaya Middle East FZ-LLC. All rights reserved.
+        © Copyright 2025 Yaya Middle East FZ-LLC. All rights reserved.
       </Typography>
     </>
   );
